@@ -92,6 +92,7 @@ for bb in breaker_blocks:
     df.loc[bb['start'], 'breaker_block'] = f"{bb['type']}"
 
 # Save the dataframe to an excel file
-df.to_excel('nifty_data.xlsx')
+df.reset_index(inplace=True)
+df.to_excel('nifty_data.xlsx', index=False)
 
 print("Excel file 'nifty_data.xlsx' created successfully.")
